@@ -14,7 +14,7 @@ const ProductPage = () =>{
       {
         products.map(product => {
             return(
-                <div key={product.id}>
+                <div key={product.id} className="text-3xl text-red-500 underline">
                     {product.id} {product.title}
                 </div>
             )
