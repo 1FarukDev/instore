@@ -1,10 +1,12 @@
 import { useState } from "react"
 const ProductPage = () =>{
+    
     const [products, setProducts] = useState([])
+    
     const fetchProducts = async () =>{
-        const response = await fetch(`/api/product`)
+        const response = await fetch(`/api/product?category=Shoes`)
         const data = await response.json()
-        setProducts(data)
+        setProducts(data.slice(0, 100))
     }
     return(
     <>
@@ -15,7 +17,7 @@ const ProductPage = () =>{
         products.map(product => {
             return(
                 <div key={product.id} className="text-3xl text-red-500 underline">
-                    {product.id} {product.title}
+                    {product.id} {product.title} | {product.category.name}
                 </div>
             )
         })
