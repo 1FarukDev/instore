@@ -15,11 +15,13 @@ const ProductPage = () =>{
     </button>
       {
         products.map(product => {
-            return(
-                <div key={product.id} className="text-3xl text-red-500 underline">
-                    {product.id} {product.title} | {product.category.name}
-                </div>
-            )
+            if(product.category.name === "Shoes"){
+                return(
+                    <div key={product.id} className="text-3xl text-red-500 underline">
+                        {product.id} {product.title} | {product.category.name}
+                    </div>
+                )
+            }else ""
         })
     } 
 
