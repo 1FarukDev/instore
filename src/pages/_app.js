@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="lg:w-4/5 justify-center lg:m-auto ">
+    <div className="lg:w-4/5 justify-center lg:m-auto md:w-full">
       <Navbar />
       <Component {...pageProps} />
     </div>
