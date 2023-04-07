@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import HomeImage from "@/Public/assets/images/Image.png";
-import Chair from '@/Public/assets/images/chair.png'
+import Chair from "@/Public/assets/images/chair.png";
 const ProductPage = () => {
   return (
     <>
@@ -70,16 +70,29 @@ const PageImage = () => {
 // };
 
 const Category = () => {
-  return(
+  return (
     <section className="">
-       <h1 className="text-xl font-bold">Category</h1>
-       <div className="flex mt-2">
-          <div>
-            <div><Image src={Chair} alt='Chair Image'/></div>
+      <h1 className="text-xl font-bold">Category</h1>
+      <div className="flex mt-2">
+        <div className="p-2 relative text-center text-white">
+          <div className="">
+            <Image src={Chair} alt="Chair Image" />
           </div>
-          <div> <div><Image src={Chair} alt='Chair Image'/></div></div>
-          <div> <div><Image src={Chair} alt='Chair Image'/></div></div>
-       </div>
+          <span className="absolute top-1/2 text-center items-center left-6">Chairs</span>
+        </div>
+        <div className="p-2">
+          {" "}
+          <div>
+            <Image src={Chair} alt="Chair Image" />
+          </div>
+        </div>
+        <div className="p-2">
+          {" "}
+          <div>
+            <Image src={Chair} alt="Chair Image" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
