@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import HomeImage from "@/Public/assets/images/Image.png";
-import Chair from "@/Public/assets/images/chair.png";
+import categories from "@/Data/categories";
+// import Chair from "@/Public/assets/images/chair.png";
+// import sofa from "@/Public/assets/images/sofa.png";
+// import desk from "@/Public/assets/images/desk.png";
+// import desk from ''
 const ProductPage = () => {
   return (
     <>
       <Header />
       <PageImage />
-      <Category />
+      <CategoryList />
+      {/* <h1>Hello World</h1> */}
       {/* <Data /> */}
     </>
   );
@@ -26,14 +31,26 @@ const Header = () => {
 };
 const PageImage = () => {
   return (
-    <section className="relative h-96">
-      <div className="absolute">
+    <section className="relative">
+      {/* <div className="">
         <Image src={HomeImage} alt="Chairs Image" />
       </div>
-      <div className="absolute left-3 top-32">
+      <div className="absolute left-6 top-32">
         <p className="font-bold ">
           High quality sofa <br /> <span className="text-3xl">30% off</span>
         </p>
+      </div> */}
+      <div className="relative text-center w-full">
+        <div className="w-full">
+          <Image src={HomeImage} alt="Chair Image" />
+        </div>
+        <span className="absolute top-1/2 text-center items-center left-6">
+          {" "}
+          <p className="font-bold ">
+            High quality sofa <br />{" "}
+            <span className="lg:text-3xl">30% off</span>
+          </p>
+        </span>
       </div>
     </section>
   );
@@ -69,30 +86,52 @@ const PageImage = () => {
 //   );
 // };
 
-const Category = () => {
+// const Category = () => {
+//   return (
+//     <section className="">
+//       <h1 className="text-xl font-bold pl-2">Category</h1>
+//       <div className="flex mt-2">
+//         <div className="p-2 relative text-center text-white">
+//           <div className="">
+//             <Image src={Chair}  alt="Chair Image" />
+//           </div>
+//           <span className="absolute top-1/2 text-center items-center left-6">Chairs</span>
+//         </div>
+//         <div className="p-2 relative text-center text-white">
+//           <div className="">
+//             <Image src={sofa} alt="Chair Image" />
+//           </div>
+//           <span className="absolute top-1/2 text-center items-center left-6">Sofas</span>
+//         </div>
+//         <div className="p-2 relative text-center text-white">
+//           <div className="">
+//             <Image src={desk} alt="Chair Image" />
+//           </div>
+//           <span className="absolute top-1/2 text-center items-center left-6">Desk</span>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+const CategoryList = () => {
   return (
     <section className="">
-      <h1 className="text-xl font-bold">Category</h1>
-      <div className="flex mt-2">
-        <div className="p-2 relative text-center text-white">
-          <div className="">
-            <Image src={Chair} alt="Chair Image" />
+      <h1 className="text-xl font-bold pl-2">Category</h1>
+      {categories.map((category) => {
+        return (
+          <div key={category.key}>
+            <div className="p-2 relative text-center text-white">
+              <div className="">
+                <Image src={`/../../public/assets/images/${category.Image}`} width={400} height={100} alt="Chair Image" />
+              </div>
+              <span className="absolute top-1/2 text-center items-center left-6">
+               {category.name}
+              </span>
+            </div>
           </div>
-          <span className="absolute top-1/2 text-center items-center left-6">Chairs</span>
-        </div>
-        <div className="p-2">
-          {" "}
-          <div>
-            <Image src={Chair} alt="Chair Image" />
-          </div>
-        </div>
-        <div className="p-2">
-          {" "}
-          <div>
-            <Image src={Chair} alt="Chair Image" />
-          </div>
-        </div>
-      </div>
+        );
+      })}
     </section>
   );
 };
