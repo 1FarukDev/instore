@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import HomeImage from "@/Public/assets/images/Image.png";
 import categories from "@/Data/categories";
+
 // import Chair from "@/Public/assets/images/chair.png";
 // import sofa from "@/Public/assets/images/sofa.png";
 // import desk from "@/Public/assets/images/desk.png";
@@ -11,7 +12,7 @@ const ProductPage = () => {
     <>
       <Header />
       <PageImage />
-      <div className="flex">
+      <div className="">
         <CategoryList />
       </div>
       {/* <h1>Hello World</h1> */}
@@ -120,11 +121,14 @@ const CategoryList = () => {
   return (
     <section className="">
       <h1 className="text-xl font-bold pl-2">Category</h1>
+      <div className="flex">
       {categories.map((category) => {
         return (
-          <div className="flex w-full">
-            <div key={category.key} className="flex border-2 border-red-500">
-              <div className="p-2 relative text-center text-white">
+          <div
+              key={category.key}
+              className="flex"
+            >
+              <div className="p-2 relative text-center text-white categ">
                 <div className="">
                   <Image
                     src={`/assets/images/${category.Image}`}
@@ -138,9 +142,12 @@ const CategoryList = () => {
                 </span>
               </div>
             </div>
-          </div>
         );
       })}
+      </div>
     </section>
   );
 };
+
+
+{/*  */}
