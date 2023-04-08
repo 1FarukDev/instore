@@ -11,7 +11,9 @@ const ProductPage = () => {
     <>
       <Header />
       <PageImage />
-      <CategoryList />
+      <div className="flex">
+        <CategoryList />
+      </div>
       {/* <h1>Hello World</h1> */}
       {/* <Data /> */}
     </>
@@ -120,14 +122,21 @@ const CategoryList = () => {
       <h1 className="text-xl font-bold pl-2">Category</h1>
       {categories.map((category) => {
         return (
-          <div key={category.key}>
-            <div className="p-2 relative text-center text-white">
-              <div className="">
-                <Image src={`/../../public/assets/images/${category.Image}`} width={400} height={100} alt="Chair Image" />
+          <div className="flex w-full">
+            <div key={category.key} className="flex border-2 border-red-500">
+              <div className="p-2 relative text-center text-white">
+                <div className="">
+                  <Image
+                    src={`/assets/images/${category.Image}`}
+                    width={400}
+                    height={100}
+                    alt="Chair Image"
+                  />
+                </div>
+                <span className="absolute top-1/2 text-center items-center left-6">
+                  {category.name}
+                </span>
               </div>
-              <span className="absolute top-1/2 text-center items-center left-6">
-               {category.name}
-              </span>
             </div>
           </div>
         );
