@@ -8,7 +8,8 @@ const ProductPage = () => {
       <Header />
       <PageImage />
         <CategoryList />
-      {/* <Data /> */}
+      <Data />
+      <Popular />
     </>
   );
 };
@@ -68,5 +69,40 @@ const CategoryList = () => {
         })}
       </div>
     </section>
+  );
+};
+
+const Popular =() =>{
+  return(
+    <h1>Hello World</h1>
+  )
+}
+const Data = () => {
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    const response = await fetch(`/api/products`);
+    const data = await response.json();
+    setProducts(data);
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  return (
+    <>
+      <div className="w-full">
+        {products.map((product) => {
+          if (product.category.name === "Watches") {
+            return (
+              <div key={product.id} className=" ">
+                {product.id} {product.title} | {product.category.name}
+                <Image src={product.images[1]} width={400} height={300}/>
+              </div>
+            );
+          } else {
+            return ``;
+          }
+        })}
+      </div>
+    </>
   );
 };
