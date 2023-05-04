@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 check logrocket for pagination 
+
+I would be using sanity for cms in this project
