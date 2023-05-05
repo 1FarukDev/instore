@@ -11,6 +11,8 @@
     "watch": "tailwindcss -i ./src/styles/globals.css -o ./dist/output.css --watch"
   },
   "dependencies": {
+    "@sanity/client": "^6.0.1",
+    "@sanity/image-url": "^1.0.2",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",

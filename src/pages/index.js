@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import HomeImage from "@/Public/assets/images/Image.png";
 import categories from "@/Data/categories";
-const ProductPage = ({properties}) => {
+// import { ImageUrlBuilder } from "@sanity/image-url";
+// import { SanityClient } from "@sanity/client";
+import client from "client";
+// import Image from "next/image";
+const ProductPage = ({ properties }) => {
+  // const imageUrl = imageUrlFor(imageData.asset).url();
   console.log(properties);
   return (
     <>
@@ -11,24 +16,20 @@ const ProductPage = ({properties}) => {
       <CategoryList />
       <Data />
       <Popular /> */}
-      <div>
-        Hello WOrld
-      </div>
-      {
-        properties.result.map(prop => {
-          return (
-                        <div key={prop.key} className="flex">
-                          <div className="p-2 relative text-center categ">
-                            <div className="">
-                            </div>
-                            <span className="absolute top-1/2 text-center items-center left-6">
-                              {prop.price}
-                            </span>
-                          </div>
-                        </div>
-                      );
-        })
-      }
+      <div>Hello WOrld</div>
+      {properties.result.map((prop) => {
+        return (
+          <div key={prop.key} className="flex">
+            <div className="p-2 relative text-center categ">
+              <div className=""></div>
+              <span className="absolute top-1/2 text-center items-center left-6">
+                {prop.price}
+                <Image src={`/${prop.image}`} width={200} height={200} />
+              </span>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 };
@@ -138,7 +139,9 @@ export default ProductPage;
 //   };
 // }
 export async function getStaticProps(context) {
-  const response = await fetch("https://e1esx4r6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%7B%0Aauthor%20-%3E%20%7Bname%7D%2C%0A%20%20price%0A%7D%0A");
+  const response = await fetch(
+    "https://e1esx4r6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%7B%0A%20%20price%2C%0A%20%20%20%20author%20-%3E%20%7Bname%7D%2C%0A%20%20%20%20key%2C%0A%20%20%20%22imageUrl%22%3A%20mainImage.asset-%3Eurl%0A%7D%0A"
+  );
   const data = await response.json();
 
   return {
