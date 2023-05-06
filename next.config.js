@@ -7,8 +7,11 @@ const nextConfig = {
 
 
 module.exports = {
+  // images: {
+  //   domains: ['api.lorem.space'],
+  // },
   images: {
-    domains: ['api.lorem.space'],
+    domains: ['cdn.sanity.io'],
   },
 },
 nextConfig
