@@ -12,7 +12,7 @@ const ProductPage = ({ properties }) => {
     <>
       <Header />
       <PageImage />
-      <div className="flex justify-between px-4">
+      <div className="lg:flex lg:justify-between flex px-4">
         <Link href="/chairs">
           <Chair />
         </Link>
