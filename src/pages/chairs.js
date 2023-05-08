@@ -1,8 +1,8 @@
 import Image from "next/image";
 import chairimg from "@/Public/assets/images/desktop chair.png";
 import button from "@/Public/assets/images/Button.png";
-import chairimg2 from "@/Public/assets/images/desktop chair 2.png";
 import Link from "next/link";
+import DesktopChair from "@/components/dekstopChair";
 const Chairs = ({ chair }) => {
   console.log(chair);
   return (
@@ -36,21 +36,7 @@ const Chairs = ({ chair }) => {
         }
       </main>
 
-      <header className="relative">
-        <div>
-          {" "}
-          <Image src={chairimg2} width={20000} />{" "}
-        </div>
-        <div className="absolute top-1/3 left-10 ">
-          <div className="font-bold text-3xl">Sale</div>
-          <div>
-            All chairs up to <br />
-            <span className="font-bold"> 50% Off</span>{" "}
-          </div>
-          <div></div>
-          <div></div>
-        </div>
-      </header>
+      <DesktopChair />
     </section>
   );
 };

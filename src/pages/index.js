@@ -6,12 +6,14 @@ import Sofa from "@/components/category/sofa";
 import Desk from "@/components/category/desk";
 import Chair from "@/components/category/chair";
 import Link from "next/link";
+import DesktopChair from "@/components/dekstopChair";
 const ProductPage = ({ properties }) => {
   console.log(properties);
   return (
     <>
       <Header />
       <PageImage />
+      hhgh
       <div className="lg:flex lg:justify-between flex px-4">
         <Link href="/chairs">
           <Chair />
@@ -23,6 +25,7 @@ const ProductPage = ({ properties }) => {
           <Desk />
         </Link>
       </div>
+      <DesktopChair />
       {/* <CategoryList /> */}
       {/* <Data /> */}
       {/* <Popular /> */}
