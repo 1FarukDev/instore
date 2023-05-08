@@ -1,0 +1,1 @@
+## When ever youre having the map function error.......rewrite the whole mappings again
