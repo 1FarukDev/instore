@@ -14,7 +14,7 @@ const ProductPage = ({ properties }) => {
       <Header />
       <PageImage />
       hhgh
-      <div className="lg:flex lg:justify-between flex px-4">
+      <div className="lg:flex lg:justify-between  flex px-4">
         <Link href="/chairs">
           <Chair />
         </Link>
@@ -25,11 +25,12 @@ const ProductPage = ({ properties }) => {
           <Desk />
         </Link>
       </div>
-      <DesktopChair />
+      
       {/* <CategoryList /> */}
       {/* <Data /> */}
       {/* <Popular /> */}
-      {/* {properties.result.map((prop) => {
+      <div className="flex flex-wrap">
+      {properties.result.map((prop) => {
         return (
           <div key={prop.key} className="flex">
             <div className="p-2 relative text-center categ">
@@ -41,7 +42,9 @@ const ProductPage = ({ properties }) => {
             </div>
           </div>
         );
-      })} */}
+      })}
+      </div>
+      <DesktopChair />
     </>
   );
 };
@@ -75,81 +78,6 @@ const PageImage = () => {
     </section>
   );
 };
-// const CategoryList = () => {
-//   return (
-//     <section className="">
-//       <h1 className="text-xl font-bold pl-2">Category</h1>
-//       <div className="flex lg:overflow-hidden overflow-scroll">
-//         {categories.map((category) => {
-//           return (
-//             <div key={category.key} className="flex">
-//               <div className="p-2 relative text-center text-white categ">
-//                 <div className="">
-//                   <Image
-//                     src={`/assets/images/${category.Image}`}
-//                     width={400}
-//                     height={100}
-//                     alt="Chair Image"
-//                   />
-//                 </div>
-//                 <span className="absolute top-1/2 text-center items-center left-6">
-//                   {category.name}
-//                 </span>
-//               </div>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </section>
-//   );
-// };
-
-// const Popular = ({ wears }) => {
-//   console.log(wears);
-//   return <h1>Hello World</h1>;
-// };
-// const Data = () => {
-//   const [products, setProducts] = useState([]);
-//   const fetchProducts = async () => {
-//     const response = await fetch(`/api/products`);
-//     const data = await response.json();
-//     setProducts(data);
-//   };
-//   useEffect(() => {
-//     fetchProducts();
-//   }, []);
-//   return (
-//     <>
-//       <div className="w-full">
-//         {products.map((product) => {
-//           if (product.category.name === "Watches") {
-//             return (
-//               <div key={product.id} className=" ">
-//                 {product.id} {product.title} | {product.category.name}
-//                 <Image src={product.images[1]} width={400} height={300}/>
-//               </div>
-//             );
-//           } else {
-//             return ``;
-//           }
-//         })}
-//       </div>
-//     </>
-//   );
-// };
-
-// export async function getStaticProps() {
-//   const response = await fetch(
-//     "https://e1esx4r6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%7B%0Aauthor%20-%3E%20%7Bname%7D%2C%0A%20%20price%0A%7D%0A"
-//   );
-//   const data = await response.json();
-//   // console.log(wea);
-//   return {
-//     props: {
-//       wears: data,
-//     },
-//   };
-// }
 export async function getStaticProps(context) {
   const response = await fetch(
     "https://e1esx4r6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%22post%22%5D%7B%0A%20%20price%2C%0A%20%20%20%20author%20-%3E%20%7Bname%7D%2C%0A%20%20%20%20key%2C%0A%20%20%20%22image%22%3A%20mainImage.asset-%3Eurl%0A%7D%0A"
