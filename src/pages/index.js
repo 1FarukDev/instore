@@ -55,7 +55,7 @@ const Header = () => {
   return (
     <header className="flex m-auto my-4">
       <div className="flex justify-center font-bold text-5xl lg:text-center leading-lo w-full  ">
-        Explore What <br /> Your Home Needs{" "}
+        Explore What <br />a Your Home Needs{" "}
       </div>{" "}
     </header>
   );
