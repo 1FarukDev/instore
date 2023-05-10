@@ -13,7 +13,9 @@ const ProductPage = ({ properties }) => {
     <>
       <Header />
       <PageImage />
-      hhgh
+      <div className="mx-6 text-2xl font-bold">
+        <p>Categories</p>
+      </div>
       <div className="lg:flex lg:justify-between  flex px-4">
         <Link href="/chairs">
           <Chair />
@@ -21,28 +23,46 @@ const ProductPage = ({ properties }) => {
         <Link href="/sofas">
           <Sofa />
         </Link>
-        <Link href='/desks'>
+        <Link href="/desks">
           <Desk />
         </Link>
       </div>
-      
+
       {/* <CategoryList /> */}
       {/* <Data /> */}
       {/* <Popular /> */}
+      <div className="mx-6 text-2xl font-bold">
+        <p>Available</p>
+      </div>
       <div className="flex flex-wrap">
-      {properties.result.map((prop) => {
-        return (
-          <div key={prop.key} className="flex">
-            <div className="p-2 relative text-center categ">
+        {properties.result.map((prop) => {
+          return (
+            <div key={prop.key} className="flex flex-col m-auto">
+              {/* <div className="p-2 relative text-center categ">
               <div className=""></div>
               <span className="">
                 {prop.price}
                 <Image src={prop.image} width={200} height={200} />
               </span>
+            </div> */}
+              <div className=" h-full my-6 bg-gray-100 rounded-2xl">
+                <div className="w-80 h-72">
+                  <Image
+                    src={prop.image}
+                    width={500}
+                    height={200}
+                    className="w-full h-full rounded-2xl"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2>{prop.title}</h2>
+                  <h2>{prop.price}</h2>
+                  {/* <h2>{cha.author.name}</h2> */}
+                </div>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
       </div>
       <DesktopChair />
     </>
@@ -55,7 +75,8 @@ const Header = () => {
   return (
     <header className="flex m-auto my-4">
       <div className="flex justify-center font-bold text-5xl lg:text-center leading-lo w-full  ">
-        Explore What <br />a Your Home Needs{" "}
+        Explore What <br />
+        Your Home Needs{" "}
       </div>{" "}
     </header>
   );
