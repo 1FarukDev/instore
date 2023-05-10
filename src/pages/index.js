@@ -8,6 +8,7 @@ import Chair from "@/components/category/chair";
 import Link from "next/link";
 import DesktopChair from "@/components/dekstopChair";
 const ProductPage = ({ properties }) => {
+  const slicedProduct = properties.result.slice(0, 5)
   console.log(properties);
   return (
     <>
@@ -34,8 +35,8 @@ const ProductPage = ({ properties }) => {
       <div className="mx-6 text-2xl font-bold">
         <p>Available</p>
       </div>
-      <div className="flex flex-wrap">
-        {properties.result.map((prop) => {
+      <div className="flex overflow-scroll  scrollbar-hide">
+        {slicedProduct.map((prop) => {
           return (
             <div key={prop.key} className="flex flex-col m-auto">
               {/* <div className="p-2 relative text-center categ">

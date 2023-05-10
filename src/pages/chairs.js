@@ -35,11 +35,11 @@ const Chairs = ({ chair }) => {
                     className="w-full h-full rounded-2xl"
                   />
                 </div>
-              <div className="p-4">
-              <h2>{cha.title}</h2>
-              <h2>{cha.price}</h2>
-              {/* <h2>{cha.author.name}</h2> */}
-              </div>
+                <div className="p-4">
+                  <h2>{cha.title}</h2>
+                  <h2>{cha.price}</h2>
+                  {/* <h2>{cha.author.name}</h2> */}
+                </div>
               </div>
             </div>
           );
