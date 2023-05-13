@@ -8,6 +8,7 @@ import Chair from "@/components/category/chair";
 import Link from "next/link";
 import DesktopChair from "@/components/dekstopChair";
 import add from '@/Public/assets/icons/add.png'
+
 const ProductPage = ({ properties }) => {
   const slicedProduct = properties.result.slice(0, 5)
   const remainsProduct = properties.result.slice(5)

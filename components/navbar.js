@@ -2,6 +2,7 @@ import Image from "next/image";
 import Logo from "@/Public/assets/icons/instor.png";
 import cart from "@/Public/assets/icons/cart.png";
 import Link from "next/link";
+import cartPage from '@/pages/cart.js'
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center pt-4 px-4">
@@ -11,7 +12,7 @@ const Navbar = () => {
       </div></Link>
       <div className="flex w-1/6 justify-between">
         <div>
-        <Image src={cart} alt="Cart Logo" />
+       <Link href='/cart'> <Image src={cart} alt="Cart Logo" /></Link>
         </div>
         <div><Image src={cart} alt="Cart Logo" /></div>
       </div>
