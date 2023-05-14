@@ -7,8 +7,8 @@ const DesktopChair = () =>{
           {" "}
           <Image src={chairimg2} width={20000} />{" "}
         </div>
-        <div className="absolute top-1/3 left-10 ">
-          <div className="font-bold text-3xl">Sale</div>
+        <div className="absolute top-1/3  left-10 ">
+          <div className="font-bold lg:text-3xl">Sale</div>
           <div>
             All chairs up to <br />
             <span className="font-bold"> 50% Off</span>{" "}
