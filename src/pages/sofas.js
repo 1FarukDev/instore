@@ -1,6 +1,5 @@
 import Image from "next/image";
 import chairimg from "@/Public/assets/images/desktop chair.png";
-// import button from "@/Public/assets/images/Button.png";
 import button from "@/Public/assets/images/Button.png"
 import Link from "next/link";
 import DesktopChair from "@/components/dekstopChair";
@@ -37,16 +36,11 @@ const Chairs = ({ desk }) => {
                     className="w-full h-full rounded-2xl"
                   />
                 </div>
-                {/* <div className="p-4">
-                  <h2>{cha.title}</h2>
-                  <h2>{cha.price}</h2>
-                  <h2>{cha.author.name}</h2>
-                </div> */}
                 <div className="p-4 flex justify-between items-center">
                   <span>
                   <h2 className="text-gray-400">{cha.title}</h2>
                   <h2>{cha.price}</h2>
-                  {/* <h2>{cha.author.name}</h2> */}
+              
                   </span>
                   <h2 className="bg-orange-200 p-2 rounded"><Image src={add}/></h2>
                 </div>
@@ -71,9 +65,6 @@ export async function getStaticProps(context) {
   const data = await response.json();
   console.log(data);
   return {
-    // props: {
-    //   chair: data,
-    // },
     props: {
       desk: data,
     },
