@@ -7,11 +7,11 @@ import Desk from "@/components/category/desk";
 import Chair from "@/components/category/chair";
 import Link from "next/link";
 import DesktopChair from "@/components/dekstopChair";
-import add from '@/Public/assets/icons/add.png'
+import add from "@/Public/assets/icons/add.png";
 
 const ProductPage = ({ properties }) => {
-  const slicedProduct = properties.result.slice(0, 5)
-  const remainsProduct = properties.result.slice(5)
+  const slicedProduct = properties.result.slice(0, 5);
+  const remainsProduct = properties.result.slice(5);
   console.log(properties);
   return (
     <>
@@ -36,10 +36,12 @@ const ProductPage = ({ properties }) => {
       {/* <Data /> */}
       {/* <Popular /> */}
       <div className="mx-6">
-       <div className="flex justify-between items-center">
-       <p className=" text-2xl font-bold">Popular</p>
-        <p className="text-orange-300 text-xs">Scroll <span className="text-orange-300">{`>>`}</span></p>
-       </div>
+        <div className="flex justify-between items-center">
+          <p className=" text-2xl font-bold">Popular</p>
+          <p className="text-orange-300 text-xs">
+            Scroll <span className="text-orange-300">{`>>`}</span>
+          </p>
+        </div>
       </div>
       <div className="flex overflow-scroll  scrollbar-hide">
         {slicedProduct.map((prop) => {
@@ -56,11 +58,13 @@ const ProductPage = ({ properties }) => {
                 </div>
                 <div className="p-4 flex justify-between items-center">
                   <span>
-                  <h2 className="text-gray-400">{prop.title}</h2>
-                  <h2>{prop.price}</h2>
-                  <h2>{prop.author.name}</h2>
+                    <h2 className="text-gray-400">{prop.title}</h2>
+                    <h2>{prop.price}</h2>
+                    <h2>{prop.author.name}</h2>
                   </span>
-                  <h2 className="bg-orange-200 p-2 rounded"><Image src={add}/></h2>
+                  <h2 className="bg-orange-200 p-2 rounded">
+                    <Image src={add} />
+                  </h2>
                 </div>
               </div>
             </div>
@@ -82,11 +86,13 @@ const ProductPage = ({ properties }) => {
                 </div>
                 <div className="p-4 flex justify-between items-center">
                   <span>
-                  <h2 className="text-gray-400">{prop.title}</h2>
-                  <h2>{prop.price}</h2>
-                  <h2>{prop.author.name}</h2>
+                    <h2 className="text-gray-400">{prop.title}</h2>
+                    <h2>{prop.price}</h2>
+                    <h2>{prop.author.name}</h2>
                   </span>
-                  <h2 className="bg-orange-200 p-2 rounded"><Image src={add}/></h2>
+                  <h2 className="bg-orange-200 p-2 rounded">
+                    <Image src={add} />
+                  </h2>
                 </div>
               </div>
             </div>
